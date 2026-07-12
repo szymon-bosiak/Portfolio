@@ -1,28 +1,69 @@
 <template>
   <div>
-    <div>
-      <Loading />
-    </div>
+    <Loading />
+    <div class="void"></div>
+    <div class="void b"></div>
 
-    <div class="h-0">
-      <Navigation />
-    </div>
+    <Rail :active="activeSection" />
 
-    <div class="relative z-0 h-[110vh] w-full">
-      <Scene />
+    <div class="content">
+      <Hero />
+      <About />
+      <Skills />
+      <Path />
+      <Work />
+      <Contact />
     </div>
-
-    <About />
-    <Projects />
-    <Contact />
   </div>
 </template>
 
 <script setup>
+import { ref, onMounted, onUnmounted } from "vue";
 import Loading from "./components/Loading.vue";
-import Navigation from "./components/Navigation.vue";
-import Scene from "./components/Scene.vue";
+import Rail from "./components/Rail.vue";
+import Hero from "./components/Hero.vue";
 import About from "./components/About.vue";
-import Projects from "./components/Projects.vue";
+import Skills from "./components/Skills.vue";
+import Path from "./components/Path.vue";
+import Work from "./components/Work.vue";
 import Contact from "./components/Contact.vue";
+
+const activeSection = ref("hero");
+
+let revealObserver = null;
+let navObserver = null;
+
+onMounted(() => {
+  revealObserver = new IntersectionObserver(
+    (entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add("in");
+          if (entry.target.id === "stage") entry.target.classList.add("flew");
+        }
+      });
+    },
+    { threshold: 0.15 }
+  );
+  document.querySelectorAll(".reveal, #bars, #stage").forEach((el) => revealObserver.observe(el));
+
+  const sections = ["hero", "about", "skills", "path", "work", "contact"];
+  navObserver = new IntersectionObserver(
+    (entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) activeSection.value = entry.target.id;
+      });
+    },
+    { threshold: 0.5 }
+  );
+  sections.forEach((id) => {
+    const el = document.getElementById(id);
+    if (el) navObserver.observe(el);
+  });
+});
+
+onUnmounted(() => {
+  if (revealObserver) revealObserver.disconnect();
+  if (navObserver) navObserver.disconnect();
+});
 </script>

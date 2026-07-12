@@ -1,85 +1,47 @@
 <template>
-  <div id="contact" class="flex flex-col justify-center bg-black">
-    <div>
-      <svg
-        viewBox="0 0 200 30"
-        fill="none"
-        xmlns="http://www.w3.org/2000/svg"
-        preserveAspectRatio="none"
-        class="h-10 w-full"
-      >
-        <path d="M200 21L200 30L0 30V21H200Z" fill="#EDE9E9"></path>
-        <path
-          opacity="0.5"
-          d="M200 13L200 20L0 20V13H200Z"
-          fill="#EDE9E9"
-        ></path>
-        <path opacity="0.3" d="M200 7L200 12L0 12V7H200Z" fill="#EDE9E9"></path>
-        <path opacity="0.15" d="M200 3L200 6L0 6V3H200Z" fill="#EDE9E9"></path>
-        <path opacity="0.05" d="M200 0L200 2L0 2V0H200Z" fill="#EDE9E9"></path>
-      </svg>
-    </div>
-
-    <div class="flex flex-col items-center bg-off-white text-black">
-      <div
-        class="flex w-full max-w-[1800px] flex-col justify-center px-8 py-6 text-black lg:flex-row"
-      >
-        <div class="min-w-max flex-col">
-          <h2 class="text-lg font-bold">// Contact</h2>
-          <p class="pt-4 pb-4 lg:pb-0">
-            I would love to hear back from you. <br />
-            Fell free to contact me.
-          </p>
-        </div>
-
-        <div
-          class="flex w-full items-center justify-evenly gap-4 py-5 xs:justify-center xs:gap-20 2xl:justify-end"
-        >
-          <a
-            href="https://github.com/szymon-bosiak"
-            target="_blank"
-            rel="noreferrer"
-            ><i
-              class="fa-brands fa-github fill-black text-4xl transition hover:scale-110 md:text-5xl"
-            ></i
-          ></a>
-          <a
-            href="https://www.linkedin.com/in/szymon-bosiak-b228151a4/"
-            target="_blank"
-            rel="noreferrer"
-            ><i
-              class="fa-brands fa-linkedin fill-black text-4xl transition hover:scale-110 md:text-5xl"
-            ></i
-          ></a>
-          <a
-            href="https://www.facebook.com/szymon.bosiak/"
-            target="_blank"
-            rel="noreferrer"
-            ><i
-              class="fa-brands fa-facebook fill-black text-4xl transition hover:scale-110 md:text-5xl"
-            ></i
-          ></a>
-          <a href="mailto:szymon.bosiak.99@gmail.com"
-            ><i
-              class="fa-regular fa-envelope fill-black text-4xl transition hover:scale-110 md:text-5xl"
-            ></i
-          ></a>
-        </div>
+  <section id="contact" style="padding: 110px 40px 60px; max-width: 1120px; margin: 0 auto">
+    <div class="reveal">
+      <div class="eyebrow">05 / Contact</div>
+      <div class="cmt" style="margin-top: 8px">// Say hello</div>
+      <h2 style="margin: 20px 0 0; font-size: clamp(30px, 4.5vw, 58px); font-weight: 700; line-height: 1.1">
+        I'd love to hear<br />from you.
+      </h2>
+      <a class="mail" href="mailto:szymon.bosiak.99@gmail.com" style="margin-top: 30px">
+        <i class="fa-regular fa-envelope"></i>szymon.bosiak.99@gmail.com
+      </a>
+      <div style="display: flex; align-items: center; gap: 14px; flex-wrap: wrap; margin-top: 24px">
+        <a class="mail" href="cv/Szymon_Bosiak_CV_PL.pdf" download style="padding: 12px 20px; font-size: 13px">
+          <i class="fa-solid fa-download"></i>CV (PL)
+        </a>
+        <a class="mail" href="cv/Szymon_Bosiak_CV_EN.pdf" download style="padding: 12px 20px; font-size: 13px">
+          <i class="fa-solid fa-download"></i>CV (EN)
+        </a>
+        <span style="font-size: 11px; color: rgba(237, 233, 233, 0.5)">// last updated: 12.07.2026</span>
       </div>
-
-      <div class="flex w-full justify-between px-2 pb-1 text-xs">
-        <p>Szymon Bosiak©2023</p>
-        <p>
-          3D model by
-          <a
-            href="https://sketchfab.com/silvercrow101"
-            class="font-outline text-off-white"
-            >silvercrow101</a
-          >
-        </p>
+      <div style="display: flex; gap: 18px; margin-top: 34px">
+        <a class="soc" href="https://github.com/szymon-bosiak" target="_blank" rel="noreferrer"
+          ><i class="fa-brands fa-github"></i
+        ></a>
+        <a class="soc" href="https://www.linkedin.com/in/szymon-bosiak-b228151a4/" target="_blank" rel="noreferrer"
+          ><i class="fa-brands fa-linkedin-in"></i
+        ></a>
       </div>
     </div>
-  </div>
+    <div
+      style="
+        display: flex;
+        justify-content: space-between;
+        margin-top: 80px;
+        padding-top: 20px;
+        border-top: 1px solid rgba(237, 233, 233, 0.14);
+        font-size: 11px;
+        color: rgba(237, 233, 233, 0.5);
+      "
+    >
+      <span>Szymon Bosiak © 2026</span>
+      <span>Still drifting in the void ✦</span>
+    </div>
+  </section>
 </template>
 
 <script setup></script>

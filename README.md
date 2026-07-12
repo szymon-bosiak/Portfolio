@@ -1,7 +1,30 @@
-# Vue 3 + Vite
+# Szymon Bosiak — Portfolio
 
-This template should help get you started developing with Vue 3 in Vite. The template uses Vue 3 `<script setup>` SFCs, check out the [script setup docs](https://v3.vuejs.org/api/sfc-script-setup.html#sfc-script-setup) to learn more.
+Personal portfolio with a Three.js starfield hero, an animated filing-cabinet project
+gallery and scroll-reveal sections.
 
-## Recommended IDE Setup
+**Live:** https://szymon-bosiak.github.io/Portfolio/
 
-- [VS Code](https://code.visualstudio.com/) + [Volar](https://marketplace.visualstudio.com/items?itemName=Vue.volar) (and disable Vetur) + [TypeScript Vue Plugin (Volar)](https://marketplace.visualstudio.com/items?itemName=Vue.vscode-typescript-vue-plugin).
+## Stack
+
+- Vue 3 (`<script setup>`) + Vite
+- Tailwind CSS
+- Three.js / TresJS — 3D hero scene
+- GSAP — animations
+
+## Development
+
+```bash
+npm install
+npm run dev      # dev server
+npm run build    # production build
+npm run deploy   # build + publish to GitHub Pages
+```
+
+## About me
+
+Frontend developer working commercially with **React + TypeScript** (MUI/MUI X,
+TanStack, Vitest + react-testing-library, Storybook, Next.js). This site doubles as my
+playground for 3D and animation work.
+
+📫 szymon.bosiak.99@gmail.com · [LinkedIn](https://www.linkedin.com/in/szymon-bosiak-b228151a4/)

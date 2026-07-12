@@ -3,8 +3,8 @@ import { templateCompilerOptions } from "@tresjs/core";
 import vue from "@vitejs/plugin-vue";
 
 // https://vitejs.dev/config/
-export default defineConfig({
-  base: '/Portfolio/',
+export default defineConfig(({ command }) => ({
+  base: command === "build" ? "/Portfolio/" : "/",
   plugins: [
     vue({
       template: {
@@ -16,4 +16,4 @@ export default defineConfig({
       ...templateCompilerOptions,
     }),
   ],
-});
+}));
