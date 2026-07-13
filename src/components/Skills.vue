@@ -32,6 +32,24 @@
         </div>
       </div>
     </div>
+    <div class="reveal" style="margin-top: 44px">
+      <div style="font-size: 11px; letter-spacing: 0.16em; color: rgba(237, 233, 233, 0.5); margin-bottom: 18px">
+        / ALSO IN THE TOOLBOX
+      </div>
+      <div style="display: flex; gap: 10px; flex-wrap: wrap">
+        <span
+          v-for="tool in toolbox"
+          :key="tool"
+          style="
+            border: 1.5px solid rgba(237, 233, 233, 0.22);
+            padding: 7px 14px;
+            font-size: 11px;
+            color: rgba(237, 233, 233, 0.75);
+            white-space: nowrap;
+          "
+          >{{ tool }}</span>
+      </div>
+    </div>
   </section>
 </template>
 
@@ -54,8 +72,26 @@ const techStack = [
 
 const proficiency = [
   { label: "React / TypeScript", value: 90 },
-  { label: "Vue / TresJS · 3D", value: 85 },
-  { label: "Tailwind / SCSS", value: 88 },
+  { label: "Styling · Tailwind / SCSS", value: 88 },
+  { label: "MUI / MUI X", value: 85 },
+  { label: "Vue", value: 85 },
   { label: "Testing · Vitest / RTL", value: 78 },
+  { label: "Next.js", value: 75 },
+  { label: "Storybook", value: 75 },
+];
+
+const toolbox = [
+  "TanStack Query / Router / Table",
+  "react-hook-form",
+  "Zod",
+  "Vite",
+  "i18next",
+  "Contentful",
+  "Three.js / TresJS",
+  "GSAP",
+  "Framer Motion",
+  "Git",
+  "GraphQL (basics)",
+  "Docker (basics)",
 ];
 </script>

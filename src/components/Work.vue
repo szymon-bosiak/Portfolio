@@ -7,7 +7,7 @@
         Each folder is a project. Hover to bring it into focus.
       </p>
     </div>
-    <div class="stage-wrap">
+    <div class="stage-wrap" style="max-width: 1120px; margin: 8px auto 0; padding: 0 40px">
       <div id="stage" class="stage" ref="stageEl">
         <img class="cabinet" src="../assets/images/cabinet.svg" alt="filing cabinet" />
 
@@ -32,7 +32,7 @@
               <div class="flinks">
                 <div v-if="project.live" class="btn solid"><a :href="project.live" target="_blank">Live</a></div>
                 <div v-if="project.code" class="btn ghost"><a :href="project.code" target="_blank">Code</a></div>
-                <div v-if="!project.live && !project.code" class="btn ghost"><a>Internal tool</a></div>
+                <div v-if="!project.live && !project.code" class="btn ghost"><a>{{ project.badge || "Private" }}</a></div>
               </div>
             </div>
           </div>
@@ -46,6 +46,8 @@
 import { ref, onMounted, onUnmounted } from "vue";
 
 import imgQueisV2 from "../assets/images/screenshots/queistal-v2.png";
+import imgEvPlatform from "../assets/images/screenshots/ev-platform-anon.svg";
+import imgCodetain from "../assets/images/screenshots/codetain.png";
 import imgMonitor from "../assets/images/screenshots/monitor.png";
 import imgHow2own from "../assets/images/screenshots/how2ow.png";
 import imgFakturka from "../assets/images/screenshots/fakturka.png";
@@ -64,15 +66,39 @@ const projects = [
     delay: ".05s",
   },
   {
+    img: imgEvPlatform,
+    name: "EV Charging Platform",
+    desc: "B2B fleet-charging platform I build daily at work — React 19 + TS, MUI X",
+    live: null,
+    code: null,
+    badge: "Commercial · NDA",
+    tx: "378px",
+    ty: "26px",
+    rot: "5deg",
+    delay: ".13s",
+  },
+  {
+    img: imgCodetain,
+    name: "Codetain Website",
+    desc: "Company website — Next.js 15, Storybook, Contentful",
+    live: "https://codetain.com",
+    code: null,
+    tx: "640px",
+    ty: "64px",
+    rot: "4deg",
+    delay: ".21s",
+  },
+  {
     img: imgMonitor,
     name: "Tender Monitor",
     desc: "Public-tender monitoring app — React 19 + TS, Supabase",
     live: null,
     code: null,
-    tx: "378px",
-    ty: "26px",
-    rot: "5deg",
-    delay: ".13s",
+    badge: "Internal tool",
+    tx: "66px",
+    ty: "344px",
+    rot: "-3deg",
+    delay: ".29s",
   },
   {
     img: imgHow2own,
@@ -80,10 +106,10 @@ const projects = [
     desc: "Overwatch 2 game guide",
     live: "https://how2ow.com",
     code: "https://github.com/szymon-bosiak/how2ow/",
-    tx: "66px",
-    ty: "344px",
-    rot: "-3deg",
-    delay: ".21s",
+    tx: "384px",
+    ty: "312px",
+    rot: "5deg",
+    delay: ".37s",
   },
   {
     img: imgFakturka,
@@ -91,10 +117,10 @@ const projects = [
     desc: "Invoice template app",
     live: "https://szymon-bosiak.github.io/Fakturka/",
     code: "https://github.com/szymon-bosiak/Fakturka",
-    tx: "384px",
-    ty: "312px",
-    rot: "5deg",
-    delay: ".29s",
+    tx: "214px",
+    ty: "474px",
+    rot: "-2deg",
+    delay: ".45s",
   },
   {
     img: imgMoody,
@@ -102,10 +128,10 @@ const projects = [
     desc: "Weather app",
     live: "https://szymon-bosiak.github.io/The_Moody_Cloud/",
     code: "https://github.com/szymon-bosiak/The_Moody_Cloud",
-    tx: "214px",
-    ty: "474px",
-    rot: "-2deg",
-    delay: ".37s",
+    tx: "560px",
+    ty: "440px",
+    rot: "3deg",
+    delay: ".53s",
   },
 ];
 
@@ -127,7 +153,8 @@ const scaleStage = () => {
   const wrap = stageEl.value?.parentElement;
   const stage = stageEl.value;
   if (!wrap || !stage) return;
-  const s = Math.min(1, wrap.clientWidth / 1000);
+  const inner = wrap.clientWidth - 80; // minus horizontal padding (2 × 40px)
+  const s = Math.min(1, inner / 960);
   stage.style.transform = `scale(${s})`;
   wrap.style.height = `${720 * s + 8}px`;
 };

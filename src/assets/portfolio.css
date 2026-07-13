@@ -340,8 +340,7 @@ a:hover {
 .stage-wrap {
   overflow: visible;
   display: flex;
-  justify-content: center;
-  margin-top: 8px;
+  justify-content: flex-start;
   position: relative;
   z-index: 2;
 }
@@ -350,7 +349,7 @@ a:hover {
   flex: none;
   width: 960px;
   height: 720px;
-  transform-origin: top center;
+  transform-origin: top left;
 }
 .cabinet {
   position: absolute;
@@ -377,7 +376,8 @@ a:hover {
   opacity: 1;
 }
 .flew .folder:hover {
-  transform: translate(var(--tx), var(--ty)) rotate(0deg) translateY(-14px) scale(1.05);
+  transform: translate(var(--tx), var(--ty)) rotate(0deg) translateY(-14px)
+    scale(1.05);
   z-index: 60;
 }
 .fbody {
